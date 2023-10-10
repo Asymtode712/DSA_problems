@@ -1,0 +1,42 @@
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    // Write your code here
+    long long sum = a[0];
+    int maxi=0,l=0,r=0;
+    while(r<a.size())
+    {
+        while(l<=r && sum>k)
+        {
+            sum=sum-a[l];
+            l++;
+        }
+        if(sum==k)
+        {
+            maxi=max(maxi,(r-l)+1);
+        }
+        r++;
+        if(r<a.size())
+        sum=sum+a[r];
+    }
+    return maxi;
+
+}
+
+414/4000
+
+takeUforward
+The best place to learn data structures, algorithms, most asked
+coding interview questions, real interview experiences free of cost.
+Follow Us
+DSA Playlist
+Array Series
+Tree Series
+Graph Series
+DP Series
+DSA Sheets
+Striver’s SDE Sheet
+Striver’s A2Z DSA Sheet
+SDE Core Sheet
+Striver’s CP Sheet
+Contribute
+Write an Article
+Copyright © 2023 takeuforward | All rights reserved
