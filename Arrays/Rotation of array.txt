@@ -1,0 +1,44 @@
+//  Rotate the array to the right by k steps
+
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        k = k%nums.size();
+        reverse(nums.begin(), nums.end());
+        reverse(nums.begin(), nums.begin()+k);
+        reverse(nums.begin()+k, nums.end());
+    }
+};
+
+// Left rotate an array by one
+
+vector<int> rotateArray(vector<int>& arr, int n) {
+    // Write your code here.
+    int t;
+    for(int i=1;i<n;i++)
+    {
+        t=arr[i-1];
+        arr[i-1]=arr[i];
+        arr[i]=t;
+    }
+    return arr;
+}
+
+// Left rotate an array by k places
+
+public:
+  void leftRotate(int arr[], int k, int n)
+  {
+     int arr1[n],j=0;
+     k = k%n;
+     for(int i=k;i<n;i++,j++){
+         arr1[j] = arr[i];
+     }
+     for(int i=0;i<k;i++,j++){
+         arr1[j] = arr[i];
+     }
+     for(int i=0;i<n;i++){
+         arr[i] = arr1[i];
+     }
+        
+    }
