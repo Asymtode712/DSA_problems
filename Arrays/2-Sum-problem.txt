@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+string read(int n, vector<int> book, int target)
+{
+    // Write your code here.
+    unordered_map<int,int> mp;
+    for(int i=0;i<n;i++)
+    {
+       if(mp[target-book[i]])
+       {
+           return "YES";
+       }
+       mp[book[i]]++;
+    }
+    return "NO";
+}
