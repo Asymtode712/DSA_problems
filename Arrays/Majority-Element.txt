@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+int majorityElement(vector<int> a) {
+	// Write your code here
+	 unordered_map<int,int>mp;
+        int ans=-1,size=a.size();
+        for(int i=0;i<size;i++)
+        mp[a[i]]++;
+        
+        for(auto itr:mp)
+        {
+            if(itr.second>size/2)
+            { 
+                ans=itr.first;
+            }
+        }
+        return ans;
+}
