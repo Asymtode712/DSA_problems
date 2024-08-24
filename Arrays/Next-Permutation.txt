@@ -1,0 +1,32 @@
+Optimal Solution-
+Using STL for vector,
+Inbuilt function next_permutation (A.begin(),aA.end()) can be used to directly get the solution.
+
+Better Solution -
+vector<int> nextPermutation(int N, vector<int> A){
+        // code here
+        int ind=-1;
+        for(int i=N-2;i>=0;i--)
+        {
+            if(A[i]<A[i+1])
+            {
+                ind=i;
+                break;
+            }
+        }
+        if(ind==-1)
+        {
+            reverse(A.begin(),A.end());
+            return A;
+        }
+        for(int i=N-1;i>ind;i--)
+        {
+            if(A[i]>A[ind])
+            {
+                swap(A[i],A[ind]);
+                break;
+            }
+        }
+        reverse(A.begin()+ind+1,A.end());
+        return A;
+    }
