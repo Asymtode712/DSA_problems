@@ -1,0 +1,12 @@
+    pair<int, int> helper(int i, int a, int b) {
+        if(i == 0) return {a, b};  // Base case for F(0)
+        if(i == 1) return {b, a};  // Base case for F(1), return b
+        
+        return helper(i - 1, b, (a + b) % 1000000007);  // Tail recursive step
+    }
+  
+    int nthFibonacci(int n){
+        if(n == 0) return 0;  // Handle the case where n is 0 directly
+        pair<int, int> res = helper(n, 0, 1);
+        return res.first;
+    }
