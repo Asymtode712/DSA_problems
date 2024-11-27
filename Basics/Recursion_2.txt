@@ -1,0 +1,13 @@
+void printTillN(int n,int i=1)
+    {
+        // Write Your Code here
+        if(i > n){
+            return;
+        }
+        else{
+            cout<<i;
+            if(i!=n)
+                cout<<" ";
+            printTillN(n,i+1);
+        }
+    }
