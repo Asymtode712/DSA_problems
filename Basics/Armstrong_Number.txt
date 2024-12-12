@@ -1,0 +1,19 @@
+string armstrongNumber(int n) {
+        // code here
+    int ans=n,cnt=0,sum=0,s=n;
+	while(ans!=0)
+	{
+		cnt++;
+		ans=ans/10;
+	}
+	while(n>0)
+	{
+	   int t=n%10;
+	   sum+=pow(t,cnt);
+	   n=n/10;
+	}
+	if(sum==s)
+	return "true";
+	else
+	return "false";
+    }
